@@ -2,12 +2,8 @@
   <head>
     <title>Multy-path storyline</title>
     <link rel= "stylesheet" href= "/static/stylesheets/style.css?">
-
-    <style>
-
-    </style>
-
   </head>
+
 
   <body>
 
@@ -15,19 +11,14 @@
       <div class="moon"></div>
 
       <div class="cloud-container">
+
         {% for i in range(0,5)%}
-        <div class="cloud"></div>
+          <div class="cloud"></div>
         {% endfor %}
-        <!-- <div class="cloud"></div>
-        <div class="cloud"></div>
-        <div class="cloud"></div>
-        <div class="cloud"></div>
-        <div class="cloud"></div> -->
+
       </div>
     </div>
     <div class="container">
-
-
 
 
     <table>
@@ -35,10 +26,12 @@
       <tr>
         <th colspan="3">
           <div id="icons">
-            {% set numbers = ['one','two','three'] %}
-              <div class="icon one"></div>
-              <div class="icon two"></div>
-              <div class="icon three"></div>
+
+            {% set numbers = ['one','two','three']  %}
+            {% for i in range(0,3) %}
+              <div class="icon {{numbers[i]}}"></div>
+            {% endfor %}
+
           </div>
           <div id="back-link"><a href="/redirectToPage/1">BACK TO THE START</a></div>
           <div><p>page: {{page_index}}</p></div>
@@ -51,7 +44,6 @@
           <div class="label">1st continuation</div>
 
           {% if stories[2] and stories[2]['sentence']|length >= 1 %}
-
             <div class="inner">
               <a href="/linkPage/{{stories[2]['page']}}/2/{{stories[2]['sentence']}}/{{stories[2]['isclicked']}}">
                 {{stories[2]['sentence']}}
@@ -60,13 +52,13 @@
             <div id="place-holder"></div>
 
           {% else: %}
-
             <form action="/attachToView/2" method="post">
               <textarea name="sentence"></textarea><br>
               <input type="submit" value="INSERT"/>
             </form>
 
           {% endif %}
+
         </td>
 
         <td></td>
@@ -78,7 +70,6 @@
           <div class="label">2nd continuation</div>
 
           {% if stories[3] and stories[3]['sentence']|length >= 1 %}
-
             <div class="inner">
               <a href="/linkPage/{{stories[3]['page']}}/3/{{stories[3]['sentence']}}/{{stories[3]['isclicked']}}">
                 {{stories[3]['sentence']}}
@@ -88,7 +79,6 @@
             <div id="place-holder"></div>
 
           {% else: %}
-
             <form action="/attachToView/3" method="post">
               <textarea  name="sentence" ></textarea><br>
               <input type="submit" value="INSERT"/>
@@ -108,14 +98,21 @@
         <!-- FOURTH -->
         <td>
           <div class="label">3rd continuation</div>
-          {% if stories[4] and stories[4]['sentence']|length >= 1 %}
-            <div class="inner"><a href="/linkPage/{{stories[4]['page']}}/4/{{stories[4]['sentence']}}/{{stories[4]['isclicked']}}">{{stories[4]['sentence']}}</a></div>
+
+          {% if stories[4] and stories[4]['sentence'] | length >= 1 %}
+            <div class="inner">
+              <a href="/linkPage/{{stories[4]['page']}}/4/{{stories[4]['sentence']}}/{{stories[4]['isclicked']}}">
+                {{stories[4]['sentence']}}
+              </a>
+            </div>
             <div id="place-holder"></div>
+
           {% else: %}
             <form action="/attachToView/4" method="post">
               <textarea name="sentence"></textarea><br>
               <input type="submit" value="INSERT"/>
             </form>
+
           {% endif %}
         </td>
       </tr>
@@ -126,14 +123,21 @@
 
         <td>
           <div class="label">4th continuation</div>
-          {% if stories[5] and stories[5]['sentence']|length >= 1 %}
-            <div class="inner"><a href="/linkPage/{{stories[5]['page']}}/5/{{stories[5]['sentence']}}/{{stories[5]['isclicked']}}">{{stories[5]['sentence']}}</a></div>
+
+          {% if stories[5] and stories[5]['sentence'] | length >= 1 %}
+            <div class="inner">
+              <a href="/linkPage/{{stories[5]['page']}}/5/{{stories[5]['sentence']}}/{{stories[5]['isclicked']}}">
+                {{stories[5]['sentence']}}
+              </a>
+            </div>
             <div id="place-holder"></div>
+
           {% else: %}
             <form action="/attachToView/5" method="post">
               <textarea name="sentence"></textarea><br>
               <input type="submit" value="INSERT"/>
             </form>
+
           {% endif %}
         </td>
 
@@ -141,7 +145,6 @@
       </tr>
     </table>
     </div>
-
 
   </body>
 </html>
