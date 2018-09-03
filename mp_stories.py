@@ -1,4 +1,5 @@
 #! /usr/bin/ python
+#!/usr/bin/env python
 #!flask/bin/python
 
 
@@ -9,7 +10,14 @@ app.secret_key = 'qwerty'
 # pages object with default page pre-existent
 # pages can contain multiple page(s), each of which contains from one
 # to multiple sentences to which 3 main datas are attached
-pages = {1:{1:{'sentence':'once upon a time','isclicked':'false','page':1}}}
+pages = {
+        1:{
+            1:{'sentence':'once upon a time',
+                'isclicked':'false',
+                'page':1
+                }
+            }
+        }
 
 # used for new pages mainly ad shortcut
 page_counter = len(pages)+1
