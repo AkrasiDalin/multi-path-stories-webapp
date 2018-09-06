@@ -104,7 +104,7 @@ div#icons div.icon {
   height: 15px;
   width: 15px;
   border-radius: 50%;
-  border: 1px solid rgba(0,0,0,.2);
+  border: 1px solid rgba(197, 188, 161, 0.46);
 }
 .one {
   background: red;
@@ -240,8 +240,9 @@ table tr td .label {
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   text-align: center;
+  font-family: 'Quicksand', sans-serif;
   color:  rgba(255,255,255,.9);
-  z-index: -20;
+  z-index: -1;
 }
 
 table tr td .main-label {
