@@ -240,7 +240,7 @@ table tr td .label {
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   text-align: center;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Ubuntu Mono', sans-serif;
   color:  rgba(255,255,255,.9);
   z-index: -1;
 }
