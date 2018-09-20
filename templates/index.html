@@ -3,6 +3,7 @@
     <title>Multy-path storyline</title>
     <link rel= "stylesheet" href= "/static/stylesheets/style.css?">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
+    <script src="../static/js/script.js" defer></script>
 
   </head>
 
@@ -15,7 +16,7 @@
       <div class="cloud-container">
 
         {% for i in range(0,5)%}
-          <div class="cloud"></div>
+          <div class="cloud" id="c{{i}}"></div>
         {% endfor %}
 
       </div>
@@ -147,6 +148,5 @@
       </tr>
     </table>
     </div>
-
   </body>
 </html>

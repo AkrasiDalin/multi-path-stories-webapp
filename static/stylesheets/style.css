@@ -14,13 +14,11 @@ body {
   width: 100px;
   height: 100px;
   position: absolute;
-  margin: 40px 0 80px 80px;
+  margin: 40px 0 80px -100px;
   border-radius: 50%;
   background: #fff8d7;
   box-shadow: 0 0 70px 70px rgba(255,255,255, 0.2);
-  animation: pass 110s linear infinite backwards;
-  -moz-animation: pass 110s linear infinite backwards;
-  -o-animation: pass 110s linear infinite backwards;
+  transition: transform .2s ease-in-out;
 }
 
 
@@ -30,22 +28,17 @@ body {
 
 .cloud, .cloud:before, .cloud:after {
   content:'';
-  display: block;
   position: absolute;
   border-radius: 50px;
   background: rgb(255,255,255);
 }
 
 .cloud {
-  display: inline-block;
   vertical-align: top;
   width: 100px;
   height: 30px;
   border-radius: 50px 35px 35px 15px;
   position: relative;
-  animation: slide 80s linear infinite backwards;
-  -moz-animation: slide 80s linear infinite backwards;
-  -o-animation: slide 80s linear infinite backwards;
 }
 
 .cloud:before {
@@ -65,27 +58,44 @@ body {
 .cloud:nth-child(1){
   position: absolute;
   top: 680px;
-  left: 150px;
+  left: -650px;
+  transform: translate3d(510px, 0px, 0px);
 }
 
 .cloud:nth-child(2){
   position: absolute;
   top: 280px;
-  left: 1200px;
+  left: -1200px;
+  transform: translate3d(520px, 0px, 0px);
+}
+
+.cloud:nth-child(3){
+  position: absolute;
+  top: 280px;
+  left: -100px;
+  transform: translate3d(530px, 0px, 0px);
 }
 
 .cloud:nth-child(4){
   position: absolute;
   top: 750px;
-  left: -90px;
+  left: -1090px;
+  transform: translate3d(540px, 0px, 0px);
 }
 
 .cloud:nth-child(5) {
   position: absolute;
   top: 140px;
-  right: 70px;
+  left: -70px;
+  transform: translate3d(550px, 0px, 0px);
 }
 
+.cloud:nth-child(6){
+  position: absolute;
+  top: 680px;
+  left: -350px;
+  transform: translate3d(560px, 0px, 0px);
+}
 
 
 div#icons {
@@ -286,17 +296,4 @@ input[type=submit]:hover  {
   background: #fab300;
   color: rgba(0,0,0,.5);
   cursor: pointer;
-}
-
-
-
-
-@keyframes slide {
-  0% { transform: translateX(-50px); }
-  100% { transform: translateX(1090px); }
-}
-
-@keyframes pass {
-  0% { transform: translateX(-50px);}
-  100% { transform: translateX(1090px); }
 }
